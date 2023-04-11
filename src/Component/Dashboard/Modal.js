@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 const Modal = ({ order }) => {
   async function createOrder() {
-    const apiKey = process.env.SAPIKEY;
-    const secretKey = process.env.SSECRETKEY;
+    const apiKey = "urwkxyxwpcgpief4clfyjdrxngflsyq9";
+    const secretKey = "yw3ecfbk3wxeugqsvyr29atu";
     const url = "https://portal.steadfast.com.bd/api/v1/create_order";
-
+    console.log(apiKey, secretKey);
     const data = {
       invoice: order?.invoiceNumber,
       recipient_name: order?.name,
@@ -29,7 +29,11 @@ const Modal = ({ order }) => {
 
     const response = await fetch(url, options);
     const responseData = await response.json();
-
+    if (responseData.status === 200) {
+      toast.success("Order Transfer to Steadfast Pannel Successfully");
+    } else {
+      toast.error("Order Can't Transfer");
+    }
     console.log(responseData);
   }
 
@@ -109,7 +113,7 @@ const Modal = ({ order }) => {
           <a href="#" className="btn btn-sm">
             Close
           </a>
-          <button className="btn btn-accent btn-sm" onClick={uploadData}>
+          <button className="btn btn-accent btn-sm" onClick={createOrder}>
             Upload Data
           </button>
         </div>

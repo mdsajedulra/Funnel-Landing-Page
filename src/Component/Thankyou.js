@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Thankyou = () => {
   ReactPixel.track("Purchase", {
-    value: "",
+    value: 480,
     currency: "BDT",
   });
   return (
