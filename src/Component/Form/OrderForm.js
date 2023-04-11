@@ -1,12 +1,23 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const OrderForm = () => {
-  const [invoiceNumber, setInvoiceNumber] = useState("");
+  const [invoiceNumber, setInvoiceNumber] = useState();
+
+  const [orderCount, setOrderCount] = useState();
   const [delivary, setDelivary] = useState("50");
   const spanRef = useRef(null);
   const navigate = useNavigate();
   const date = new Date();
+
+  useEffect(() => {
+    fetch("https://funnel-landing-page-server.vercel.app/addinvoice")
+      .then((res) => res.json())
+      .then((data) => setInvoiceNumber(data?.invoiceNumber + 1));
+  }, []);
+  console.log(invoiceNumber);
+
   const handleForm = async (event) => {
     event.preventDefault();
     const price = spanRef.current.textContent;
@@ -16,6 +27,19 @@ const OrderForm = () => {
     const address = form.address.value;
     const number = form.number.value;
     const types = form.types.value;
+    //generate invoice number
+    // setInvoiceNumber(invoiceNumber + 1);
+
+    fetch("https://funnel-landing-page-server.vercel.app/addinvoice", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ invoiceNumber }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
 
     // const price = 550;
     const quantity = 1;
@@ -33,7 +57,7 @@ const OrderForm = () => {
     };
     console.log(orderDetails);
     console.log(orderDetails);
-    fetch("http://localhost:5000/addorder", {
+    fetch("https://funnel-landing-page-server.vercel.app/addorder", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,6 +68,7 @@ const OrderForm = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.acknowledged === true) {
+          toast.success("Order Successfully");
           navigate("/thankyou", { replace: true });
         }
       })

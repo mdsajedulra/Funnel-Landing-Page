@@ -42,7 +42,7 @@ const Modal = ({ order }) => {
     console.log(event.target.value);
     const orderstate = event.target.value;
     const orderId = order?._id;
-    fetch("http://localhost:5000/updateorderstate", {
+    fetch("https://funnel-landing-page-server.vercel.app/updateorderstate", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

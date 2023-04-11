@@ -6,6 +6,10 @@ import Thankyou from "../../Component/Thankyou";
 import Allorder from "../../Component/Dashboard/AllOrder";
 import Processing from "../../Component/Dashboard/Processing";
 import Onhold from "../../Component/Dashboard/Onhold";
+import Complete from "../../Component/Dashboard/Complete";
+import Login from "../../Component/Login/Login";
+import PrivateRouter from "../PrivateRoutes/PrivateRotues";
+import DashboardMain from "../../Component/Dashboard/DashboardMain";
 
 export const router = createBrowserRouter([
   {
@@ -20,13 +24,21 @@ export const router = createBrowserRouter([
         path: "/thankyou",
         element: <Thankyou></Thankyou>,
       },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
     ],
   },
   {
     path: "/dashboard",
-    element: <Dashboard></Dashboard>,
+    element: (
+      <PrivateRouter>
+        <Dashboard></Dashboard>
+      </PrivateRouter>
+    ),
     children: [
-      { path: "/dashboard", element: <Allorder></Allorder> },
+      { path: "/dashboard", element: <DashboardMain></DashboardMain> },
       { path: "/dashboard/allorder", element: <Allorder></Allorder> },
       {
         path: "/dashboard/processing",
@@ -35,6 +47,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/onhold",
         element: <Onhold></Onhold>,
+      },
+      {
+        path: "/dashboard/complete",
+        element: <Complete></Complete>,
       },
     ],
   },

@@ -4,12 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ReactPixel from "react-facebook-pixel";
-ReactPixel.init("772714224144880");
+import AuthProvider from "./Component/Context/AuthProvder/AuthProvider";
+
+ReactPixel.init("1166456157230754");
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </React.StrictMode>
 );
 

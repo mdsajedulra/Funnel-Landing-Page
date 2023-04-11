@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Modal from "./Modal";
 
-const Onhold = () => {
+const Complete = () => {
   const [orders, setOrder] = useState([]);
   const reverseOrder = orders.reverse();
   console.log(orders);
   useEffect(() => {
-    fetch("https://funnel-landing-page-server.vercel.app/onhold")
+    fetch("https://funnel-landing-page-server.vercel.app/complete")
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, []);
@@ -98,4 +98,4 @@ const Onhold = () => {
   );
 };
 
-export default Onhold;
+export default Complete;

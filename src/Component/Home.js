@@ -1,7 +1,11 @@
 import React from "react";
 import Footer from "./Footer/Footer";
 import OrderForm from "./Form/OrderForm";
-import { Link } from "react-router-dom";
+import topbanner from "../assets/topbanner.webp";
+import daru from "../assets/daru.webp";
+import koila from "../assets/koila.webp";
+import josti from "../assets/josti.webp";
+
 import ReactPixel from "react-facebook-pixel";
 
 const Home = () => {
@@ -10,6 +14,9 @@ const Home = () => {
     <div>
       <>
         <main className="bg-slate-200 w-11/12 my-0 mx-auto ">
+          <div>
+            <img className="w-full" alt="" src={topbanner} />
+          </div>
           <p className="text-center p-5 text-2xl text-[#814097] font-bold">
             ত্বকের যত্নে ব্যাবহার করুন হাতে তৈরি প্রাকৃতিক সাবান
           </p>
@@ -36,12 +43,7 @@ const Home = () => {
           {/* 3 soap grid */}
           <div className="flex flex-col sm:flex-col md:flex-col xl:flex-row">
             <div className="m-6 border border-black bg-white rounded-lg p-3 shadow-2xl">
-              <img
-                src="https://i0.wp.com/huckleberrybd.com/wp-content/uploads/2022/12/3.webp?w=1080&ssl=1"
-                alt="Girl in a jacket"
-                width="500"
-                height="600"
-              />
+              <img src={daru} alt="Girl in a jacket" width="500" height="600" />
               <h2 className="text-2xl pt-2 text-[#61CE70] font-bold">
                 দারুচিনি সাবান বার
               </h2>
@@ -60,13 +62,13 @@ const Home = () => {
             </div>
             <div className="m-6 border border-black bg-white rounded-lg p-3 shadow-2xl">
               <img
-                src="https://i0.wp.com/huckleberrybd.com/wp-content/uploads/2022/12/3.webp?w=1080&ssl=1"
+                src={koila}
                 alt="Girl in a jacket"
                 width="500"
                 height="600"
               />
               <h2 className="text-2xl pt-2 text-[#61CE70] font-bold">
-                দারুচিনি সাবান বার
+                কয়লা সাবান বার
               </h2>
               <h4 className="text-lg font-bold py-2">উপকারিতাঃ</h4>
               <p>ব্রণ, মেসতা, কালো দাগ ও লাল রেশ দূর করেউজ্জ্বলতা বাড়াবে।</p>
@@ -83,20 +85,23 @@ const Home = () => {
             </div>
             <div className="m-6 border border-black bg-white rounded-lg p-3 shadow-2xl">
               <img
-                src="https://i0.wp.com/huckleberrybd.com/wp-content/uploads/2022/12/3.webp?w=1080&ssl=1"
+                src={josti}
                 alt="Girl in a jacket"
                 width="500"
                 height="600"
               />
               <h2 className="text-2xl pt-2 text-[#61CE70] font-bold">
-                দারুচিনি সাবান বার
+                যষ্টিমধু ও তুলশি সাবান বার
               </h2>
               <h4 className="text-lg font-bold py-2">উপকারিতাঃ</h4>
-              <p>ব্রণ, মেসতা, কালো দাগ ও লাল রেশ দূর করেউজ্জ্বলতা বাড়াবে।</p>
+              <p>
+                কালো দাগ ও লাল রেশ দূর করে উজ্জ্বলতা বাড়াবে ও রোদের জালাপোড়া
+                থেকে ত্বক কে বাচাবে।
+              </p>
               <h4 className="text-lg font-bold py-2">উপকরণ</h4>
               <p>
-                দারুচিনি, চালের গুড়া, অলিভ অয়েল -কোকোনাট অয়েল -ক্যাস্টর অয়েল
-                -এরোমা অয়েল, বৃষ্টির পানি, কস্টিক সোডা, প্রাকৃতিক উপাদান।
+                তুলসি যস্টিমধু, চালের গুড়া, বৃষ্টির পানি, অলিভ অয়েল -কোকোনাট
+                অয়েল -ক্যাস্টর অয়েল -এরোমা অয়েল, কস্টিক সোডা, প্রাকৃতিক উপাদান।
               </p>
               <h4 className="text-lg font-bold py-2">ব্যাবহার পদ্ধতি</h4>
               <p>

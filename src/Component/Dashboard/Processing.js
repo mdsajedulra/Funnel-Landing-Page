@@ -6,7 +6,7 @@ const Processing = () => {
   const reverseOrder = orders.reverse();
   console.log(orders);
   useEffect(() => {
-    fetch("http://localhost:5000/processing")
+    fetch("https://funnel-landing-page-server.vercel.app/processing")
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, []);

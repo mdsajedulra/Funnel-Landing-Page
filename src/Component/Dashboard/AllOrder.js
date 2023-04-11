@@ -6,7 +6,7 @@ const Allorder = () => {
   const reverseOrder = orders.reverse();
   console.log(orders);
   useEffect(() => {
-    fetch("http://localhost:5000/allorder")
+    fetch("https://funnel-landing-page-server.vercel.app/allorder")
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, []);
@@ -55,7 +55,7 @@ const Allorder = () => {
                 <td className="w-32 p-4">{i + 1}</td>
                 <td className="w-32 p-4">{order?.invoiceNumber}</td>
                 <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
-                  {order?.date.slice(0, 10)}
+                  {order?.date?.slice(0, 10)}
                 </td>
                 <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
                   {order?.types}
