@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 const OrderForm = () => {
   const [invoiceNumber, setInvoiceNumber] = useState();
-
-  const [orderCount, setOrderCount] = useState();
   const [delivary, setDelivary] = useState("50");
   const spanRef = useRef(null);
   const navigate = useNavigate();
@@ -102,14 +100,14 @@ const OrderForm = () => {
           className="p-2 rounded-lg m-2 w-10/12"
           placeholder="আপনার ফোন নাম্বার লিখুন"
         />
-        <div className="ml-2">কত পিস নিতে চানঃ</div>
+        {/* <div className="ml-2">কত পিস নিতে চানঃ</div>
         <input
           name="quantity"
           required
           className="p-2 rounded-lg m-2 w-10/12"
           type="number"
           defaultValue={1}
-        />
+        /> */}
         <div className="ml-2">আপনি কোন সাবানটি নিতে চাচ্ছেনঃ</div>
         <select
           name="types"
@@ -146,8 +144,10 @@ const OrderForm = () => {
         </div>
         <input
           type="submit"
-          value="Please Order"
-          className=" text-white bg-orange-600 p-3 rounded-lg mt-5 mr-5 w-full "
+          value={`Place Order ৳ ${
+            parseInt(delivary ? delivary : 0) + 480 + ".00"
+          }`}
+          className=" text-white bg-orange-600 p-3 rounded-lg mt-5 mr-5 w-10/12 "
         />
       </form>
       <div className="w-full">

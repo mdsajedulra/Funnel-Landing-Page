@@ -27,7 +27,7 @@ const DashboardMain = () => {
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-5 justify-evenly gap-10">
-        <div className="border border-2 bg-slate-200 shadow-md border-black py-10  w-full rounded-md text-center">
+        <div className=" border-2 bg-slate-200 shadow-md border-black py-10  w-full rounded-md text-center">
           <h1>Total Order</h1>
           {total?.length}
         </div>

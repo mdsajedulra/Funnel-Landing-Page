@@ -37,9 +37,6 @@ const Modal = ({ order }) => {
     console.log(responseData);
   }
 
-  const uploadData = () => {
-    console.log("data");
-  };
   // handle order state
 
   const handleOrderstate = (event) => {

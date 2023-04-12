@@ -14,9 +14,9 @@ const Home = () => {
     <div>
       <>
         <main className="bg-slate-200 w-11/12 my-0 mx-auto ">
-          <div>
+          <a href="#form">
             <img className="w-full" alt="" src={topbanner} />
-          </div>
+          </a>
           <p className="text-center p-5 text-2xl text-[#814097] font-bold">
             ত্বকের যত্নে ব্যাবহার করুন হাতে তৈরি প্রাকৃতিক সাবান
           </p>
